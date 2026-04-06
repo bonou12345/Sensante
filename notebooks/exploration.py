@@ -1,11 +1,11 @@
 """
-SenSante - Exploration du dataset patients_dakar.xlsx
+SenSante - Exploration du dataset patients_dakar.csv
 Lab 1 : Git, Python et Structure Projet
 """
 import pandas as pd
 
 # ----- CHARGER LES DONNEES -----
-df = pd.read_excel("data/patients_dakar.xlsx")
+df = pd.read_csv("data/patients_dakar.csv")
 # ----- PREMIERS AFFICHAGES -----
 print("=" * 50)
 print("SENSANTE - Exploration du dataset")
@@ -42,6 +42,9 @@ print(f"\n--- Temperature moyenne par diagnostic ---")
 temp_by_diag = df.groupby("diagnostic")["temperature"].mean()
 for diag, temp in temp_by_diag.items():
     print(f"  {diag:12s} {temp:.1f}°C")
+print(f"\n--- Nombre de patients par sexe et diagnostic ---")
+sexe_diag = df.groupby(["sexe", "diagnostic"]).size()
+print(sexe_diag)
 
 print(f"\n{'=' * 50}")
 print("Exploration terminee !")
