@@ -1,11 +1,11 @@
 """
-SenSante - Exploration du dataset patients_dakar.xlsx
+SenSante - Exploration du dataset patients_dakar.csv
 Lab 1 : Git, Python et Structure Projet
 """
 import pandas as pd
 
 # ----- CHARGER LES DONNEES -----
-df = pd.read_excel("data/patients_dakar.xlsx")
+df = pd.read_csv("data/patients_dakar.csv")
 # ----- PREMIERS AFFICHAGES -----
 print("=" * 50)
 print("SENSANTE - Exploration du dataset")
